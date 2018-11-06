@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Cuprum');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+body {
+    max-width: 980px;
+    margin: auto;
+}
+
+.top img {
+    display: block;
+    width: 100%;
+}
+
+header .menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+header .menu li {
+    display: inline;
+    margin: 0 2%;
+    display: block;
+}
+
+header .menu li a {
+    text-decoration: none;
+    color: blue;
+    font-size: 2rem;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+
+header .menu li a:hover {
+    text-decoration: underline;
+}
+
+header h1 {
+    font-family: 'Cuprum', sans-serif;
+    font-size: 3rem;
+    margin: 20px auto;
+    text-align: center;
+}
+
+header .baner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/station.png);
+    background-size: cover;
+    background-position: center;
+}
+
+main h2 {
+    font-family: 'Cuprum', sans-serif;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+main p {
+    text-align: justify;
+    margin: 10px;
+}
+
+@media (min-width: 500px) {
+    .news {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.news img {
+    display: block;
+    width: 100%;
+}
+
+.news article {
+    margin: 20px;
+}
+
+.news article h3 {
+    text-align: center;
+}
+
+.news article p {
+    margin: 10px 0 0 0;
+}
+
+.friends p {
+    font-family: 'Cuprum', sans-serif;
+    text-align: center;
+}
+
+@media (min-width: 400px) {
+    .friends {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 600px) {
+    .friends {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+#staff p {
+    text-align: center;
+}
+
+#staff>article {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 400px) {
+    .head {
+        display: grid;
+        grid-template-columns: 2.5fr 5fr 2.5fr;
+    }
+}
+
+@media (min-width: 600px) {
+    .head {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 400px) {
+    .teachers {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 600px) {
+    .teachers {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.head img {
+    display: block;
+    width: 100%;
+}
+
+.head article {
+    margin: 30px;
+}
+
+.teachers img {
+    display: block;
+    width: 100%;
+}
+
+.teachers article {
+    margin: 30px;
+}
+
+#contacts h3 {
+    text-align: center;
+}
+
+.form {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+@media (max-width: 500px) {
+    .form p {
+        display: none;
+    }
+}
+
+.textArea {
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+}
+
+@media (min-width: 500px) {
+    .name {
+        display: grid;
+        grid-template-columns: 3fr 7fr;
+    }
+
+    .form p {
+        text-align: center;
+    }
+
+    .textArea {
+        width: 100%;
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .email {
+        display: grid;
+        grid-template-columns: 3fr 7fr;
+    }
+
+    .message {
+        display: grid;
+        grid-template-columns: 3fr 7fr;
+    }
+}
+
+#button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+#button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 500px) {
+    #button-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+}
+
+.contact h4 {
+    text-align: center;
+}
+
+.contact p {
+    text-align: center;
+}
+
+@media (min-width: 400px) {
+    .contact {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (min-width: 600px) {
+    .contact {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.end {
+    text-align: center;
+    color: white;
+    margin: 0px;
+    background-color: grey;
+}
+
+.end img {
+    display: block;
+    width: 100%;
+}
+
+.end p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
