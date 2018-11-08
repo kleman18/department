@@ -4,6 +4,7 @@
 body {
     max-width: 980px;
     margin: auto;
+    background-color: aliceblue;
 }
 
 .top img {
@@ -11,19 +12,157 @@ body {
     width: 100%;
 }
 
-header .menu {
+
+@media (min-width: 500px) {
+    #navigation {
+        display: none;
+    }
+}
+
+#menuMobile li {
+  text-decoration: none;
+  color: blue;
+  transition: color 0.3s ease;
+}
+
+#menuMobile a:hover {
+  color: tomato;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 5; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+    color: blue;
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menuMobile {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menuMobile a {
+  padding: 5px auto;
+  margin: 5px auto;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+#navigation {
+    position: sticky;
+    top: 0;
+    z-index: inherit;
+}
+
+
+
+@media (max-width: 499px) {
+    #navigationDesktop {
+        display: none;
+    }
+}
+
+#navigationDesktop {
+    position: sticky;
+    top: 0;
+    z-index: inherit;
+}
+
+.menu {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    background-color: yellow;
+    margin: 0px;
+    padding: 10px;
 }
 
-header .menu li {
+.menu li {
     display: inline;
     margin: 0 2%;
     display: block;
 }
 
-header .menu li a {
+.menu li a {
     text-decoration: none;
     color: blue;
     font-size: 2rem;
@@ -31,18 +170,18 @@ header .menu li a {
     text-align: center;
 }
 
-header .menu li a:hover {
+.menu li a:hover {
     text-decoration: underline;
 }
 
-header h1 {
+main h1 {
     font-family: 'Cuprum', sans-serif;
     font-size: 3rem;
     margin: 20px auto;
     text-align: center;
 }
 
-header .baner {
+main .baner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,6 +268,15 @@ main p {
     }
 }
 
+.head img {
+    display: block;
+    width: 100%;
+}
+
+.head article {
+    margin: 30px;
+}
+
 @media (min-width: 400px) {
     .teachers {
         display: grid;
@@ -138,18 +286,8 @@ main p {
 
 @media (min-width: 600px) {
     .teachers {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-}
-
-.head img {
-    display: block;
-    width: 100%;
-}
-
-.head article {
-    margin: 30px;
 }
 
 .teachers img {
@@ -176,26 +314,31 @@ main p {
     }
 }
 
+.nameArea {
+    width: 100%;
+    display: flex;
+    margin-top: 0px;
+    padding: 10px 0px;
+}
+
+.emailArea {
+    width: 100%;
+    display: flex;
+    margin-top: 5px;
+    padding: 10px 0px;
+}
+
 .textArea {
     width: 100%;
     display: flex;
-    margin-top: 15px;
+    margin-top: 0px;
+    padding: 15px 0px;
 }
 
 @media (min-width: 500px) {
     .name {
         display: grid;
         grid-template-columns: 3fr 7fr;
-    }
-
-    .form p {
-        text-align: center;
-    }
-
-    .textArea {
-        width: 100%;
-        display: flex;
-        margin-top: 15px;
     }
 
     .email {
@@ -206,6 +349,31 @@ main p {
     .message {
         display: grid;
         grid-template-columns: 3fr 7fr;
+    }
+
+    .form p {
+        text-align: center;
+    }
+
+    .nameArea {
+        width: 100%;
+        display: flex;
+        margin-top: 0px;
+        padding: 10px 0px;
+    }
+
+    .emailArea {
+        width: 100%;
+        display: flex;
+        margin-top: 0px;
+        padding: 10px 0px;
+    }
+
+    .textArea {
+        width: 100%;
+        display: flex;
+        margin-top: 0px;
+        padding: 15px 0px;
     }
 }
 
@@ -281,6 +449,7 @@ main p {
 }
 
 .end p {
+    padding: 10px;
     margin-bottom: 0px;
     margin-top: 0px;
 }
